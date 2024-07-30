@@ -1,7 +1,16 @@
 <template>
+  <html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+  </head>
+  <body>
   <div id="app">
-    <nav>
+    <nav class="text-center">
       <ul>
+<!--        //only auth user can access dashboard and logout-->
+
         <li><router-link to="/dashboard">Dashboard</router-link></li>
         <li><router-link to="/register">Register</router-link></li>
         <li><router-link to="/login">Login</router-link></li>
@@ -10,6 +19,9 @@
     </nav>
     <router-view/>
   </div>
+  </body>
+  </html>
+
 </template>
 
 <script>
@@ -27,13 +39,13 @@ export default {
 /* Add some basic styling */
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
-  text-align: center;
+  //text-align: center;
   color: #2c3e50;
 }
 
 nav {
   padding: 16px;
-  background-color: #42b983;
+  background-color: #000000;
 }
 
 nav ul {

@@ -1,13 +1,33 @@
 <template>
-  <div>
-    <h1>Register</h1>
-    <form @submit.prevent="register">
-      <input v-model="name" placeholder="Name" />
-      <input v-model="email" type="email" placeholder="Email" />
-      <input v-model="password" type="password" placeholder="Password" />
-      <input v-model="password_confirmation" type="password" placeholder="Confirm Password" />
-      <button type="submit">Register</button>
-    </form>
+  <div class="container mx-auto">
+    <div class="mt-5 w-50 mx-auto">
+      <h1>Register</h1>
+      <form @submit.prevent="register">
+        <div class="mb-3">
+          <label for="name" class="form-label">Name</label>
+          <input type="text" v-model="name" id="name" class="form-control" placeholder="Name"/>
+          <small v-if="errors.name" class="text-danger">{{ errors.name[0] }}</small>
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input v-model="email" id="email" class="form-control" type="email" placeholder="Email"/>
+          <small v-if="errors.email" class="text-danger">{{ errors.email[0] }}</small>
+
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input v-model="password" id="password" class="form-control" type="password" placeholder="Password"/>
+          <small v-if="errors.password" class="text-danger">{{ errors.password[0] }}</small>
+
+        </div>
+        <div class="mb-3">
+          <label for="password_confirmation" class="form-label">Confirm Password</label>
+          <input v-model="password_confirmation" class="form-control" id="password_confirmation" type="password" placeholder="Confirm Password"/>
+          <small v-if="errors.password" class="text-danger">{{ errors.password[0] }}</small>
+        </div>
+        <button type="submit" class="btn btn-success">Register</button>
+      </form>
+    </div>
   </div>
 </template>
 
@@ -19,7 +39,8 @@ export default {
       name: '',
       email: '',
       password: '',
-      password_confirmation: ''
+      password_confirmation: '',
+      errors: {}
     };
   },
   methods: {
@@ -33,6 +54,10 @@ export default {
         });
         this.$router.push('/dashboard');
       } catch (error) {
+        //validation error show
+        if (error.response.status === 422) {
+          this.errors = error.response.data.errors;
+        }
         console.error('Registration failed:', error);
       }
     }

@@ -1,18 +1,21 @@
 <template>
-  <div>
-    <h2>Add Questions</h2>
-    <form @submit.prevent="addQuestion">
-      <input v-model="questionText" placeholder="Question Text" />
-      <input v-model="correctAnswer" placeholder="Correct Answer" />
-      <input v-model.number="score" type="number" placeholder="Score" />
-      <input v-model.number="negativeMark" type="number" placeholder="Negative Mark" />
-      <button type="submit">Add Question</button>
-    </form>
-    <ul>
-      <li v-for="question in questions" :key="question.id">
-        {{ question.question_text }} - Correct: {{ question.correct_answer }} - Score: {{ question.score }} - Negative: {{ question.negative_mark }}
-      </li>
-    </ul>
+  <div class="card">
+    <div class="card-body">
+      <h2>Add Questions</h2>
+      <form @submit.prevent="addQuestion">
+        <input v-model="questionText" placeholder="Question Text"/>
+        <input v-model="correctAnswer" placeholder="Correct Answer"/>
+        <input v-model.number="score" type="number" placeholder="Score"/>
+        <input v-model.number="negativeMark" type="number" placeholder="Negative Mark"/>
+        <button type="submit">Add Question</button>
+      </form>
+      <ul>
+        <li v-for="question in questions" :key="question.id">
+          {{ question.question_text }} - Correct: {{ question.correct_answer }} - Score: {{ question.score }} -
+          Negative: {{ question.negative_mark }}
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
