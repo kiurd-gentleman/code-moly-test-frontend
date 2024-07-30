@@ -23,6 +23,7 @@
 },
     methods: {
     async submitAnswers() {
+
     // Handle answer submission logic here
 }
 },
