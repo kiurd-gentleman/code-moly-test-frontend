@@ -12,7 +12,8 @@ export default new Vuex.Store({
         user: {},
         quizzes: [],
         questions: [],
-        results: []
+        results: [],
+        quiz: {},
     },
     mutations: {
         auth_success(state, {token, user}) {
@@ -25,6 +26,9 @@ export default new Vuex.Store({
         },
         setQuizzes(state, quizzes) {
             state.quizzes = quizzes;
+        },
+        findQuizById(state, quiz) {
+            state.quiz = quiz;
         },
         setQuestions(state, questions) {
             state.questions = questions;
@@ -60,6 +64,11 @@ export default new Vuex.Store({
             const response = await quiz.getQuizzes();
             console.log(response.data);
             commit('setQuizzes', response.data);
+        },
+        async findQuizById(id) {
+            const response = await quiz.findQuizById(id);
+            // commit('findQuizById', response.data);
+            return response.data;
         },
         async fetchQuestions({commit}, quizId) {
             const response = await quiz.getQuestions(quizId);
