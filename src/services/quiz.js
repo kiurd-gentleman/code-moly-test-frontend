@@ -12,5 +12,10 @@ export default {
     },
     getResults() {
         return axios.get('/results');
+    },
+    submitQuiz(quizId, answers) {
+        return axios.post(`/quizzes/${quizId}/submit`, {
+            answers
+        });
     }
 };

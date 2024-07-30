@@ -77,6 +77,9 @@ export default new Vuex.Store({
         async fetchResults({commit}) {
             const response = await quiz.getResults();
             commit('setResults', response.data);
+        },
+        async submitQuiz({commit}, {quizId, answers}) {
+            return quiz.submitQuiz(quizId, answers);
         }
     },
     modules: {}
