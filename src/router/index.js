@@ -18,7 +18,7 @@ const routes = [
     { path: '/create-quiz', name: 'CreateQuiz', component: CreateQuiz },
     { path: '/edit-quiz/:id', name: 'EditQuiz', component: QuizEdit },
     {path : '/create-question/:id', name: 'CreateQuestion', component: CreateQuestion},
-    { path: '/attend-quiz', name: 'AttendQuiz', component: AttendQuiz },
+    { path: '/attend-quiz/:id', name: 'AttendQuiz', component: AttendQuiz },
     { path: '/results', name: 'Results', component: Results },
     // { path: '*', redirect: '/login' }
 ];

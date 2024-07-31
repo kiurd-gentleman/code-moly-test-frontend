@@ -3,7 +3,6 @@
     <div class="mt-5 w-50 mx-auto">
       <h1>Create Quiz</h1>
       <quiz-creation/>
-<!--      <question-creation/>-->
     </div>
   </div>
 </template>
