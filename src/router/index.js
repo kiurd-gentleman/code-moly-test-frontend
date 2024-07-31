@@ -8,19 +8,21 @@ import AttendQuiz from '../views/AttendQuiz.vue';
 import Results from '../views/Results.vue';
 import QuizEdit from "../views/EditQuiz.vue";
 import CreateQuestion from "../views/CreateQuestion.vue";
+import ThankYou from "../views/ThankYou.vue"
 
 // Vue.use(VueRouter);
 
 const routes = [
-    { path: '/login', name: 'Login', component: Login },
-    { path: '/register', name: 'Register', component: Register },
-    { path: '/dashboard', name: 'Dashboard', component: Dashboard },
-    { path: '/create-quiz', name: 'CreateQuiz', component: CreateQuiz },
-    { path: '/edit-quiz/:id', name: 'EditQuiz', component: QuizEdit },
-    {path : '/create-question/:id', name: 'CreateQuestion', component: CreateQuestion},
-    { path: '/attend-quiz/:id', name: 'AttendQuiz', component: AttendQuiz },
-    { path: '/results', name: 'Results', component: Results },
-    // { path: '*', redirect: '/login' }
+    {path: '/login', name: 'Login', component: Login},
+    {path: '/register', name: 'Register', component: Register},
+    {path: '/dashboard', name: 'Dashboard', component: Dashboard},
+    {path: '/create-quiz', name: 'CreateQuiz', component: CreateQuiz},
+    {path: '/edit-quiz/:id', name: 'EditQuiz', component: QuizEdit},
+    {path: '/create-question/:id', name: 'CreateQuestion', component: CreateQuestion},
+    {path: '/attend-quiz/:id', name: 'AttendQuiz', component: AttendQuiz},
+    {path: '/results', name: 'Results', component: Results},
+    {path: '/', redirect: '/login'},
+    {path: '/thank-you', name: 'ThankYou', component: ThankYou}
 ];
 
 

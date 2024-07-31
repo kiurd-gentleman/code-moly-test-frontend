@@ -1,7 +1,8 @@
 <template>
-  <div>
-    <h1>Results</h1>
-    <result-display />
+  <div class="container mx-auto">
+    <div class="mt-5 w-50 mx-auto">
+      <result-display/>
+    </div>
   </div>
 </template>
 

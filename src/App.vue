@@ -9,9 +9,8 @@
   <div id="app">
     <nav class="text-center">
       <ul>
-<!--        //only auth user can access dashboard and logout-->
-
         <li><router-link to="/dashboard">Dashboard</router-link></li>
+        <li><router-link to="/results">Results</router-link></li>
         <li><router-link to="/register">Register</router-link></li>
         <li><router-link to="/login">Login</router-link></li>
         <li><a href="#" @click.prevent="logout">Logout</a></li>
@@ -27,8 +26,8 @@
 <script>
 export default {
   methods: {
-    logout() {
-      this.$store.dispatch('logout');
+    async logout() {
+      await this.$store.dispatch('logout');
       this.$router.push('/login');
     }
   }
